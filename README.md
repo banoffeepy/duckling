@@ -26,8 +26,6 @@ Duckling IDE is a lightweight, web-based SQL IDE designed for interacting with l
     * Save the content of the SQL editor to a local file.
 * **User Interface:**
     * Clean, dark-themed interface.
-    * Application logo, title, and version displayed.
-    * "Info" button with an "About" modal.
     * Status bar indicating connection state and query outcomes.
 
 ## Technologies Used
@@ -45,8 +43,7 @@ Duckling IDE is a lightweight, web-based SQL IDE designed for interacting with l
     * `json` (for storing connection configurations)
 
 ## Project Structure
-
-
+```text
 duckling_flask/
 ├── app.py                 # Main Flask application, API routes, DB logic
 ├── duckling_config.json   # Stores connection configurations (created on first run)
@@ -58,8 +55,8 @@ duckling_flask/
 │   └── images/
 │       └── logo.svg       # Application logo (or .png)
 └── templates/
-└── index.html         # Main HTML page for the IDE
-
+    └── index.html         # Main HTML page for the IDE
+```
 
 ## Setup and Installation
 
@@ -127,6 +124,7 @@ Upon first run, a `duckling_config.json` file and a `default_duckling.db` databa
 * More advanced results table features (sorting, filtering on the frontend).
 * Schema browser/explorer panel.
 * User authentication and cloud storage for configurations/scripts (for a non-local version).
+* tabs for multiple scripts.
 
 ---
 *This README provides a general guide. Specific paths or commands might need adjustment based on your OS or project setup.*
