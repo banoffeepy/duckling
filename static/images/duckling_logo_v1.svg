@@ -1,0 +1,22 @@
+<svg width="200" height="50" viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="50" rx="5" ry="5" fill="#2C2C2C"/>
+
+  <style>
+    .duck-shape { fill: #AEAEAE; } /* Light grey for ducks */
+  </style>
+
+  <g transform="translate(48, 25) scale(0.35)">
+    <circle cx="0" cy="0" r="15" class="duck-shape"/>
+    <rect x="12" y="-7.5" width="15" height="15" rx="5" ry="5" class="duck-shape"/>
+  </g>
+  <g transform="translate(73, 25) scale(0.35)"> <circle cx="0" cy="0" r="15" class="duck-shape"/>
+    <rect x="12" y="-7.5" width="15" height="15" rx="5" ry="5" class="duck-shape"/>
+  </g>
+  <g transform="translate(98, 25) scale(0.35)"> <circle cx="0" cy="0" r="15" class="duck-shape"/>
+    <rect x="12" y="-7.5" width="15" height="15" rx="5" ry="5" class="duck-shape"/>
+  </g>
+
+  <g transform="translate(138, 25) scale(0.7)"> <circle cx="0" cy="0" r="15" class="duck-shape"/>
+    <rect x="12" y="-7.5" width="15" height="15" rx="5" ry="5" class="duck-shape"/>
+  </g>
+</svg>

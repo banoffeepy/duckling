@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ app_name }} - v{{ app_version }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/logo.png') }}">
+</head>
+<body>
+    <div class="header-bar">
+        <img src="{{ url_for('static', filename='images/duckling_logo_v1.svg') }}" alt="Duckling IDE Logo" id="app-logo">
+        <h1 id="app-title">{{ app_name }}</h1>
+        <span id="app-version-header">v{{ app_version }}</span>
+    </div>
+
+    <div class="top-bar">
+        <label for="connection-select">Active Config:</label>
+        <select id="connection-select"></select>
+        <button id="manage-connections-btn">Manage Configs</button>
+        <button id="app-info-btn">Info</button>
+        <button id="connect-disconnect-btn">Connect</button>
+        <button id="run-query-btn" class="run-query" disabled>▶ Run Query</button>
+        
+        <label for="load-sql-file-actual" class="custom-file-upload">Load SQL</label>
+        <input type="file" id="load-sql-file-actual" accept=".sql,.txt">
+        
+        <button id="save-sql-btn">Save SQL</button>
+    </div>
+
+    <div class="container">
+        <div id="sql-editor-container">
+            <textarea id="sql-editor" placeholder="> Type your SQL query here"></textarea>
+        </div>
+        <div id="results-container">
+            <div id="results-output"> > Query Output</div>
+        </div>
+    </div>
+
+    <div class="status-bar">
+        <span id="status-message">Ready</span>
+    </div>
+
+    <div id="connectionsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-connections-modal">&times;</span>
+            <h2>Manage Connection Configurations</h2>
+            <label for="modal-connection-list">Existing Configurations:</label>
+            <select id="modal-connection-list" size="5"></select>
+            
+            <hr>
+
+            <h3 id="modal-form-title">Add New Configuration</h3>
+            <label for="conn-name">Name:</label>
+            <input type="text" id="conn-name" placeholder="My Database Connection">
+            
+            <label for="conn-path">Path (.db file):</label>
+            <input type="text" id="conn-path" placeholder="path/to/your.db">
+            
+            <label class="checkbox-label" for="conn-readonly">
+                <input type="checkbox" id="conn-readonly">Read-Only
+            </label>
+            
+            <div class="modal-buttons">
+                <button id="save-conn-btn" class="save-button">Save Configuration</button>
+                <button id="new-conn-btn">Clear for New</button>
+                <button id="delete-conn-btn" class="delete-button">Delete Selected</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="appInfoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-app-info-modal">&times;</span>
+            <h2>About {{ app_name }}</h2>
+            <p>A simple, local DuckDB IDE designed to help developers and data scientists quickly explore and query <code>.db</code> files.</p>
+            <p>This tool is built with Python, Flask, Polars, and DuckDB.</p>
+            <p><strong>Version:</strong> {{ app_version }}</p>
+            <p>&copy; 2025 Duckling Project</p>
+            <p class="modal-center-button-container">
+                <button id="ok-app-info-modal-btn">OK</button>
+            </p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

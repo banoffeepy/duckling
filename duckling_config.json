@@ -1,0 +1,10 @@
+{
+    "connections": [
+        {
+            "name": "Default Duckling DB",
+            "path": "default_duckling.db",
+            "read_only": false
+        }
+    ],
+    "active_connection_name": "Default Duckling DB"
+}
